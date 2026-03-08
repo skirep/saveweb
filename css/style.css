@@ -259,6 +259,7 @@ details summary {
   border-bottom: 3px solid var(--amazon-orange);
   display: inline-block;
   letter-spacing: -.3px;
+  scroll-margin-top: 70px;
 }
 
 .category-heading:first-child {
@@ -278,6 +279,7 @@ details summary {
   margin-bottom: 32px;
   overflow: hidden;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -436,6 +438,14 @@ details summary {
   transition: var(--transition);
   box-shadow: 0 3px 10px rgba(255,153,0,.35);
   white-space: nowrap;
+}
+
+/* Stretched link: expands the anchor's click area to cover the whole product card.
+   Works because .product-card has position:relative and overflow:hidden. */
+.product-card .btn-buy::after {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
 
 .btn-buy:hover {
